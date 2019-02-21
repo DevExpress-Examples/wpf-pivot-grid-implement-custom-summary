@@ -4,7 +4,7 @@
 * [MainWindow.xaml](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml))
 * [MainWindow.xaml.cs](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml))
 <!-- default file list end -->
-# How to Create a Custom Summary Type to Display the Distinct Value Count
+# How to Create a Custom Summary to Display the Distinct Value Count
 
 This example demonstrates how to count distinct values (the number of orders with equal product quantities) and display the result in the pivot grid.
 

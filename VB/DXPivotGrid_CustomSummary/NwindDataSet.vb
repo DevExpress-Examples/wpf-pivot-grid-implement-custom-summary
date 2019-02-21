@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
-Namespace DXPivotGrid_CustomSummary
+﻿Namespace DXPivotGrid_CustomSummary
 
 
 	Partial Public Class DataSet1

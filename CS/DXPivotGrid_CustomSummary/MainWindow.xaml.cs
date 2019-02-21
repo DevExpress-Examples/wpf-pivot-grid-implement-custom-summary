@@ -1,37 +1,33 @@
-﻿using System.Windows;
-using DevExpress.Xpf.PivotGrid;
+﻿using System;
+using System.Collections;
+using System.Windows;
 
 namespace DXPivotGrid_CustomSummary {
     public partial class MainWindow : Window {
-        DataSet1TableAdapters.OrderReportsTableAdapter adapter = 
-            new DataSet1TableAdapters.OrderReportsTableAdapter();
-        int minSum = 500;
+        DataSet1TableAdapters.SalesPersonTableAdapter adapter = 
+            new DataSet1TableAdapters.SalesPersonTableAdapter();
         public MainWindow() {
             InitializeComponent();
             pivotGridControl1.DataSource = adapter.GetData();
         }
-        private void pivotGridControl1_CustomSummary(object sender, PivotCustomSummaryEventArgs e) {
-            if (e.DataField != fieldExtendedPrice) return;
+        private void pivotGridControl1_CustomSummary(object sender, DevExpress.Xpf.PivotGrid.PivotCustomSummaryEventArgs e) {
+            string name = e.DataField.FieldName;
 
-            // A variable which counts the number of orders whose sum exceeds $500.
-            int order500Count = 0;
-
-            // Get the record set corresponding to the current cell.
-            PivotDrillDownDataSource ds = e.CreateDrillDownDataSource();
-
-            // Iterate through the records and count the orders.
-            for (int i = 0; i < ds.RowCount; i++) {
-                PivotDrillDownDataRow row = ds[i];
-
-                // Get the order's total sum.
-                decimal orderSum = (decimal)row[fieldExtendedPrice];
-                if (orderSum >= minSum) order500Count++;
+            IList list = e.CreateDrillDownDataSource();
+            Hashtable ht = new Hashtable();
+            for (int i = 0; i < list.Count; i++)
+            {
+                DevExpress.XtraPivotGrid.PivotDrillDownDataRow row = list[i] as DevExpress.XtraPivotGrid.PivotDrillDownDataRow;
+                object v = row[name];
+                if (v != null && v != DBNull.Value)
+                    ht[v] = null;
             }
+            e.CustomValue = ht.Count;
+        }
 
-            // Calculate the percentage.
-            if (ds.RowCount > 0) {
-                e.CustomValue = (decimal)order500Count / ds.RowCount;
-            }
+        private void PivotGridControl1_Loaded(object sender, RoutedEventArgs e)
+        {
+            pivotGridControl1.BestFit();
         }
     }
 }

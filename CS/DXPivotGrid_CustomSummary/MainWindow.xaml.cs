@@ -1,16 +1,31 @@
-﻿using System;
+﻿using DevExpress.DataAccess.Excel;
+using System;
 using System.Collections;
 using System.Windows;
 
-namespace DXPivotGrid_CustomSummary {
-    public partial class MainWindow : Window {
-        DataSet1TableAdapters.SalesPersonTableAdapter adapter = 
-            new DataSet1TableAdapters.SalesPersonTableAdapter();
-        public MainWindow() {
+namespace DXPivotGrid_CustomSummary
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : DevExpress.Xpf.Core.ThemedWindow
+    {
+        ExcelDataSource ds = new ExcelDataSource();
+        public MainWindow()
+        {
             InitializeComponent();
-            pivotGridControl1.DataSource = adapter.GetData();
+
+            ds.Name = "Excel Data Source";
+            ds.FileName = "SalesPerson.xlsx";
+            ExcelWorksheetSettings worksheetSettings = new ExcelWorksheetSettings("Data");
+            ds.SourceOptions = new ExcelSourceOptions(worksheetSettings);
+            ds.Fill();
+
+            pivotGridControl1.DataSource = ds;
         }
-        private void pivotGridControl1_CustomSummary(object sender, DevExpress.Xpf.PivotGrid.PivotCustomSummaryEventArgs e) {
+
+        private void pivotGridControl1_CustomSummary(object sender, DevExpress.Xpf.PivotGrid.PivotCustomSummaryEventArgs e)
+        {
             string name = e.DataField.FieldName;
 
             IList list = e.CreateDrillDownDataSource();

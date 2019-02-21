@@ -5,10 +5,12 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace DXPivotGrid_CustomSummary {
+namespace DXPivotGrid_CustomSummary
+{
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application {
+    public partial class App : Application
+    {
     }
 }

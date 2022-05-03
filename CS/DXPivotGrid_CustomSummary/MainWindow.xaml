@@ -8,13 +8,33 @@
     xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid">
     <Grid>
 
-        <dxpg:PivotGridControl CustomSummary="pivotGridControl1_CustomSummary" Loaded="PivotGridControl1_Loaded" Name="pivotGridControl1">
+        <dxpg:PivotGridControl Loaded="PivotGridControl1_Loaded" Name="pivotGridControl1" DataProcessingEngine="Optimized">
             <dxpg:PivotGridControl.Fields>
-                <dxpg:PivotGridField Name="fieldCategoryName" FieldName="CategoryName" Area="RowArea" AreaIndex="0" Caption="Category Name" />
-                <dxpg:PivotGridField Name="fieldProductName" FieldName="ProductName" Area="RowArea" AreaIndex="1" Caption="Product Name" />
-                <dxpg:PivotGridField Name="fieldOrderDate" FieldName="OrderDate" Area="ColumnArea" AreaIndex="0" Caption="OrderDate" GroupInterval="DateYear" />
-                <dxpg:PivotGridField Name="fieldQuantity" FieldName="Quantity" Area="DataArea" AreaIndex="0" Caption="Quantity" />
-                <dxpg:PivotGridField Name="fieldQuantityDistinctCount" FieldName="Quantity" Area="DataArea" AreaIndex="1" Caption="Count Distinct" SummaryType="Custom" />
+                <dxpg:PivotGridField Name="fieldCategoryName" Area="RowArea" AreaIndex="0" Caption="Category Name">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="CategoryName"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Name="fieldProductName" Area="RowArea" AreaIndex="1" Caption="Product Name">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="ProductName"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Name="fieldOrderDate" Area="ColumnArea" AreaIndex="0" Caption="OrderDate">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="OrderDate" GroupInterval="DateYear"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Name="fieldQuantity" Area="DataArea" AreaIndex="0" Caption="Quantity">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Quantity" />
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Name="fieldQuantityDistinctCount"  Area="DataArea" AreaIndex="1" Caption="Count Distinct">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:ExpressionDataBinding Expression="DistinctCount([OrderID])"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
             </dxpg:PivotGridControl.Fields>
         </dxpg:PivotGridControl>
 

@@ -3,34 +3,31 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E2136)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [MainWindow.xaml](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml))
-<!-- default file list end -->
 # How to Create a Custom Summary to Display the Distinct Value Count
 
-This example demonstrates how to count distinct values (the number of orders with equal product quantities) and display the result in the pivot grid.
-
-This example handles the [PivotGridControl.CustomSummary](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.PivotGridControl.CustomSummary) event that occurs when the control calculates a summary for a field whose [SummaryType](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotGridFieldBase.SummaryType) is [PivotSummaryType.Custom](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.PivotGrid.PivotSummaryType). The event handler calls the [e.CreateDrillDownDataSource](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.Data.PivotGridCustomSummaryEventArgsBase-1.CreateDrillDownDataSource) method to retrieve the underlying data rows for the current cell, counts distinct values and returns the result to the [e.CustomValue](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.Data.PivotGridCustomSummaryEventArgsBase-1.CustomValue) property.
+This example demonstrates how to count distinct values (the number of orders with equal product quantities) and display the result in the Pivot Grid.
 
 ![screenshot](./images/screenshot.png)
 
-API in this example:
+| Data Field | Expression |
+| --- | --- |
+| Count Distinct| ```DistinctCount([OrderID])``` |
 
-* [PivotGridControl.CustomSummary](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.PivotGridControl.CustomSummary) event
-* [PivotGridField.SummaryType](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotGridFieldBase.SummaryType) property
-* [PivotGridCustomSummaryEventArgs.CreateDrillDownDataSource](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.Data.PivotGridCustomSummaryEventArgsBase-1.CreateDrillDownDataSource) method
-* [PivotDrillDownDataRow](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotDrillDownDataRow) class
-* [PivotGridCustomSummaryEventArgs.CustomValue](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.Data.PivotGridCustomSummaryEventArgsBase-1.CustomValue) property
-* [ExcelDataSource](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Excel.ExcelDataSource) class
+Call the [CriteriaOperator.RegisterCustomFunction](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.CriteriaOperator.RegisterCustomFunction(DevExpress.Data.Filtering.ICustomFunctionOperator)) method to register a custom function in your project (see [Program.cs](./CS/Win_Pivot_CustomAggregates/Program.cs#L18)/[Program.vb](./VB/Win_Pivot_CustomAggregates/Program.vb#L18))
 
-**See also:**
+<!-- default file list -->
+## Files to look at
 
-* [Aggregation](https://docs.devexpress.com/WPF/11732)
-* [Pivot Grid Expression Syntax](https://docs.devexpress.com/CoreLibraries/120512)
-* [Unbound Fields](https://docs.devexpress.com/WindowsForms/8025)
+- [MainWindow.xaml](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml#L35) (VB: [MainWindow.xaml](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml#L35))
+- [MainWindow.xaml.cs](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml.cs#L16) (VB: [MainWindow.xaml.vb](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml.vb#L15))
+- [DistinctCountFunction.cs](./CS/DXPivotGrid_CustomSummary/DistinctCountFunction.cs) (VB: [DistinctCountFunction.vb](./VB/DXPivotGrid_CustomSummary/DistinctCountFunction.cs))
+<!-- default file list end -->
+## Documentation
 
-Examples for other platforms:
-* [WinForms -  How to Create a Custom Summary Type to Display the Distinct Value Count](https://github.com/DevExpress-Examples/how-to-implement-the-distinct-count-summary-type-within-the-pivotgrid-e637)
+- [Custom Aggregate Functions](https://docs.devexpress.com/CoreLibraries/401333/devexpress-data-library/custom-aggregate-functions)
+- [Custom Summaries](https://docs.devexpress.com/WPF/8052/controls-and-libraries/pivot-grid/data-shaping/aggregation/summaries/custom-summaries)
+## More Examples 
+- [Pivot Grid for WinForms - How to Create a Custom Summary Type to Display the Distinct Value Count](https://github.com/DevExpress-Examples/how-to-implement-the-distinct-count-summary-type-within-the-pivotgrid-e637)
+- [Pivot Grid for WinForms - How to Aggregate Data by the Field's First Value](https://github.com/DevExpress-Examples/winforms-pivot-grid-custom-aggregates)
+- [Pivot Grid for Web Forms - How to Aggregate Data by the Field's First Value](https://github.com/DevExpress-Examples/aspnet-pivot-grid-custom-aggregates)

@@ -14,14 +14,14 @@ This example demonstrates how to count distinct values (the number of orders wit
 | --- | --- |
 | Count Distinct| ```DistinctCount([OrderID])``` |
 
-Call the [CriteriaOperator.RegisterCustomFunction](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.CriteriaOperator.RegisterCustomFunction(DevExpress.Data.Filtering.ICustomFunctionOperator)) method to register a custom function in your project (see [Program.cs](./CS/Win_Pivot_CustomAggregates/Program.cs#L18)/[Program.vb](./VB/Win_Pivot_CustomAggregates/Program.vb#L18)).
+Call the [CriteriaOperator.RegisterCustomFunction](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.CriteriaOperator.RegisterCustomFunction(DevExpress.Data.Filtering.ICustomFunctionOperator)) method to register a custom function in your project (see [MainWindow.xaml.cs](./CS/Win_Pivot_CustomAggregates/MainWindow.xaml.cs#L18)/[MainWindow.xaml.vb](./VB/Win_Pivot_CustomAggregates/MainWindow.xaml.vb#L18)).
 
 <!-- default file list -->
 ## Files to look at
 
 - [MainWindow.xaml](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml#L35) (VB: [MainWindow.xaml](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml#L35))
 - [MainWindow.xaml.cs](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml.cs#L16) (VB: [MainWindow.xaml.vb](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml.vb#L15))
-- [DistinctCountFunction.cs](./CS/DXPivotGrid_CustomSummary/DistinctCountFunction.cs) (VB: [DistinctCountFunction.vb](./VB/DXPivotGrid_CustomSummary/DistinctCountFunction.cs))
+- [DistinctCountFunction.cs](./CS/DXPivotGrid_CustomSummary/DistinctCountFunction.cs) (VB: [DistinctCountFunction.vb](./VB/DXPivotGrid_CustomSummary/DistinctCountFunction.vb))
 <!-- default file list end -->
 ## Documentation
 

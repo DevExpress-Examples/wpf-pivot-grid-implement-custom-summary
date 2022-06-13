@@ -19,7 +19,7 @@ Call the [CriteriaOperator.RegisterCustomFunction](https://docs.devexpress.com/C
 <!-- default file list -->
 ## Files to look at
 
-- [MainWindow.xaml](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml#L35) (VB: [MainWindow.xaml](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml#L35))
+- [MainWindow.xaml](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml#L37) (VB: [MainWindow.xaml](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml#L35))
 - [MainWindow.xaml.cs](./CS/DXPivotGrid_CustomSummary/MainWindow.xaml.cs#L16) (VB: [MainWindow.xaml.vb](./VB/DXPivotGrid_CustomSummary/MainWindow.xaml.vb#L15))
 - [DistinctCountFunction.cs](./CS/DXPivotGrid_CustomSummary/DistinctCountFunction.cs) (VB: [DistinctCountFunction.vb](./VB/DXPivotGrid_CustomSummary/DistinctCountFunction.vb))
 <!-- default file list end -->

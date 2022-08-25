@@ -30,6 +30,3 @@ API in this example:
 * [Aggregation](https://docs.devexpress.com/WPF/11732)
 * [Pivot Grid Expression Syntax](https://docs.devexpress.com/CoreLibraries/120512)
 * [Unbound Fields](https://docs.devexpress.com/WindowsForms/8025)
-
-Examples for other platforms:
-* [WinForms -  How to Create a Custom Summary Type to Display the Distinct Value Count](https://github.com/DevExpress-Examples/how-to-implement-the-distinct-count-summary-type-within-the-pivotgrid-e637)

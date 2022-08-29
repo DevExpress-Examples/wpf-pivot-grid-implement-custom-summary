@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# Pivot Grid for WPF - How to Create a Custom Summary to Display the Distinct Value Count
+# Pivot Grid for WPF - How to Create a Custom Summary to Display a Distinct Value Count
 
 This example demonstrates how to count distinct values (the number of orders with equal product quantities) and display the result in the Pivot Grid.
 
